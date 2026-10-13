@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー｜kotodama-metrics</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<nav><a href="index.html">アプリについて</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></nav>
+
+<h1>プライバシーポリシー</h1>
+<p class="meta">kotodama-metrics（投稿成果の自動集計ツール）　制定日・最終更新日：2026年10月13日</p>
+
+<p>このポリシーは、運営者（BODY &amp; MIND）が自分で使う集計ツール「kotodama-metrics」（以下「本アプリ」）が、どの情報を取得し、どのように使い、保存し、共有するかを説明するものです。</p>
+
+<h2>1. YouTube API サービスの使用</h2>
+<p>本アプリは <strong>YouTube API サービス</strong>（YouTube Data API・YouTube Analytics API）を使用しています。Google による情報の取り扱いは、<a href="https://policies.google.com/privacy" rel="noopener">Google プライバシーポリシー</a>（http://www.google.com/policies/privacy）をご覧ください。</p>
+
+<h2>2. 取得する情報</h2>
+<p>本アプリが取得するのは、運営者が自分で許可した、運営者自身のチャンネル・アカウントの情報だけです。</p>
+<table>
+<tr><th>YouTube のチャンネル情報</th><td>チャンネルID、ハンドル（@名）、アップロード動画の一覧のID。許可したチャンネルが設定どおりかを確認するために使います。</td></tr>
+<tr><th>YouTube の動画情報</th><td>動画ID、題名、公開日時、長さ</td></tr>
+<tr><th>YouTube の統計</th><td>視聴回数、エンゲージ視聴回数、総再生時間、平均視聴時間、平均視聴率、高評価数、コメント数、共有数、登録者の増加数・減少数（YouTube Analytics API）、公開されている視聴回数・高評価数・コメント数（YouTube Data API）</td></tr>
+<tr><th>Instagram の情報</th><td>運営者のアカウント（@kotodama_kaiun）のリールの ID・URL・投稿日時・キャプションの1行目と、再生数・リーチ・いいね・コメント数・保存数・シェア数・平均視聴時間などの数値（Instagram API）</td></tr>
+</table>
+<p>コメントの本文、視聴者やフォロワーの個人を特定できる情報、収益に関する情報、メールアドレスなどは取得しません。</p>
+
+<h2>3. 利用目的</h2>
+<p>取得した情報は、運営者が自分の投稿の成果を把握し、次の制作の参考にするためだけに使います。具体的には、公開から24時間後・7日後の数値の記録、同じチャンネル（アカウント）の前の投稿との比較を含む運営者向けレポートの作成、運営者への通知に使います。</p>
+<p>YouTube の数値は、YouTube API が返した値をそのまま表示し、YouTube の数値をもとにした差や割合などの新しい数値は作りません。</p>
+
+<h2>4. 保存場所と保存期間</h2>
+<table>
+<tr><th>集計データ・レポート</th><td>運営者だけがアクセスできる GitHub の非公開リポジトリに保存します。YouTube API の応答は、統計の部分だけを保存します。YouTube の動画の題名は集計用の一覧にだけ記録し（7日ごとに最新の内容に更新）、記録・レポート・通知では動画IDで表します。</td></tr>
+<tr><th>予備の保存</th><td>集計の実行ごとに、GitHub Actions の予備保存（アーティファクト）にも保存し、90日で自動的に削除されます。</td></tr>
+<tr><th>通知</th><td>GitHub の Issue（非公開リポジトリ内）にコメントし、GitHub から運営者にメールが届きます。通知に含まれるのは、レポートの名前、新しく追加した投稿の URL（Instagram はキャプションの1行目、YouTube は動画ID）、取得できなかった投稿、注意事項です。</td></tr>
+<tr><th>実行の記録</th><td>集計プログラムの実行の記録（ログ）は GitHub に保存されます（GitHub の既定で90日）。ログには認証情報を出さず、YouTube の動画は動画IDで表します。</td></tr>
+<tr><th>認証情報</th><td>Google（YouTube）の認証情報は GitHub Secrets（暗号化された保管場所）に、Instagram と GitHub の認証情報は GitHub Secrets と運営者の Mac のキーチェーンに保存し、画面・ログ・ファイルには出力しません。Google の認証情報の設定時に一時的にダウンロードするファイルは、登録後に削除します。</td></tr>
+</table>
+<p><strong>保存した YouTube のデータの確認と更新：</strong>本アプリは7日ごとに、許可がまだ有効か、動画がまだ存在するかを YouTube API で確認し、自動で登録した動画の題名・長さを最新の内容に更新します。動画が見つからない場合や、許可を確認できない場合は運営者に通知し、運営者がその動画（またはチャンネル）のデータを削除します。収集を停止しているなどの理由で確認ができない状態が続く場合も、運営者に通知し、収集の再開またはデータの削除を行います。</p>
+
+<h2>5. 第三者への提供</h2>
+<p>取得した情報を販売したり、第三者に提供したり、広告に使ったりすることはありません。ただし、本アプリの実行・保存・通知のために、GitHub（GitHub, Inc.）のサービスを利用しており、情報は GitHub のサーバー上で処理・保存されます。また、YouTube のデータは Google から、Instagram のデータは Meta から取得します。法令にもとづく開示を求められた場合は、法令に従います。</p>
+
+<h2>6. 情報を見る人</h2>
+<p>情報を見るのは運営者本人だけです。</p>
+
+<h2>7. Google API サービスのユーザーデータに関するポリシー</h2>
+<p>本アプリによる、Google API から受け取った情報の使用および他のアプリへの転送は、限定使用（Limited Use）の要件を含む <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API サービスのユーザーデータに関するポリシー</a> に従います。</p>
+
+<h2>8. Cookie など</h2>
+<p>本アプリ（集計プログラム）は、利用者の端末やブラウザに Cookie や類似の技術を設定・読み取りしません。</p>
+
+<h2>9. アクセスの取り消しと、データの削除</h2>
+<p>本アプリへの YouTube のアクセス許可は、いつでも <a href="https://myaccount.google.com/connections" rel="noopener">Google アカウントのセキュリティ設定（サードパーティのアクセス）</a>（https://security.google.com/settings/security/permissions）から取り消すことができます。</p>
+<p>許可が取り消された場合、または下記のお問い合わせ先から削除の依頼があった場合は、30日以内に、本アプリが保存した該当チャンネル（または該当動画）の YouTube のデータを、非公開リポジトリの現在のデータ、変更履歴（過去の版）、予備の保存から削除します。</p>
+
+<h2>10. お問い合わせ</h2>
+<p>本ポリシーや情報の取り扱いについてのご質問・ご意見は、次の連絡先までお寄せください。</p>
+<p>BODY &amp; MIND の<a href="https://lin.ee/cCSGlKl" rel="noopener">公式LINE</a>からお問い合わせください（メッセージの最初に「kotodama-metrics について」とお書き添えください）。</p>
+
+<h2>11. 改定</h2>
+<p>取得する情報や利用目的を変更する場合は、このページを更新し、更新日を記載します。</p>
+
+<footer>運営者：BODY &amp; MIND　／　<a href="index.html">kotodama-metrics について</a></footer>
+</main>
+</body>
+</html>
